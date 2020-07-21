@@ -23,10 +23,8 @@ do{
 
   if(isNaN(input)){
     alert('Введите именно число');
-  }else{
-    if(Number(input) != 0){
+  }else if(Number(input) != 0){
       numbers.push(Number(input));
-    };
   }
 }while(input != null);
 
