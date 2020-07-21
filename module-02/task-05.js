@@ -6,11 +6,9 @@
 // Слова в строке могут быть в произвольном регистре.
 
 const checkForSpam = function(message) {
-
   //!Var1
   const newMessage = message.split(' ').join('').toLowerCase();
   console.log(newMessage.includes('sale') || newMessage.includes('spam'));
-  
 };
 
 
