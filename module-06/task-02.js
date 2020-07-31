@@ -2,7 +2,8 @@
 import {default as users}  from './users.js';
 
 const getUsersWithEyeColor = (users, color) => {
-  const result = users.filter((elem)=>{return elem.eyeColor === color})
+  const result = [...users]
+  result.filter((elem)=>{return elem.eyeColor === color})
   return result;
 };
 
