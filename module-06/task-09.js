@@ -3,10 +3,10 @@
 import {default as users}  from './users.js';
 
 const getNamesSortedByFriendsCount = users => {
-  let result = users
-  .sort((a,b)=> a.friends.length - b.friends.length)
+  let result = [...users];
+  const arr = result.sort((a,b)=> a.friends.length - b.friends.length)
   .map((elem)=>{return elem.name});
-  return result;
+  return arr;
 };
 
 console.log(getNamesSortedByFriendsCount(users));
