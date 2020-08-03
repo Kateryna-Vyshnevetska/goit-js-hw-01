@@ -10,14 +10,19 @@
 // Категория: Животные
 // Количество элементов: 4
 
-const ulRef = document.querySelector('li');
-// console.log(ulRef.textContent);
 
-console.log(Array.from(ulRef.childNodes)); 
-console.log(ulRef.children);
+const ulRef = document.querySelector('ul');
+const liRef = [...ulRef.children];
+console.log(`В списке ${liRef.length} категории`);
 
-const liRef = document.querySelectorAll('ul');
-console.log(liRef);
+liRef.forEach(el => {
+  console.log(`Категория: ${el.firstElementChild.textContent}`);
+  const liUlRef = el.lastElementChild;
+  console.log(`Количество элементов: ${liUlRef.children.length}`);
+});
+
+
+
 
 
 
