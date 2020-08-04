@@ -11,11 +11,17 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
+// !1
+// const ulRef = document.querySelector('ul');
+// ingredients.forEach(el => ulRef.innerHTML+= `<li>${el}</li>`);
 
-const ulRef = document.querySelector('ul');
-ingredients.forEach(el => ulRef.innerHTML+= `<li>${el}</li>`);
+// !2
+const result = ingredients.reduce((acc, el)=>{
+  return (acc += `<li>${el}</li>`);
+},'');
+ulRef.insertAdjacentHTML('beforeend',result);
 
-// !
+// !3
 // for (let i = 0; i < ingredients.length; i++) {
 //   const liRef = document.createElement('li');
 //   liRef.textContent = ingredients[i];

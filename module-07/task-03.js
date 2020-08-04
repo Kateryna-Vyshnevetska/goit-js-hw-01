@@ -25,9 +25,17 @@ const images = [
 
 const ulRef = document.querySelector('#gallery');
 
-images.forEach(el => ulRef.insertAdjacentHTML('beforeend', `
-<li class='item'>
-<img class='item_img' src = "${el.url}" alt = "${el.alt}">
-</li>`));
+// ! 1
+// images.forEach(el => ulRef.insertAdjacentHTML('beforeend', `
+// <li class='item'>
+// <img class='item_img' src = "${el.url}" alt = "${el.alt}">
+// </li>`));
+// ! 2
+const result = images.reduce((acc, el) => {
+  return (acc += `<li class='item'>
+  <img class='item_img' src = "${el.url}" alt = "${el.alt}">
+  </li>`)
+},'');
+ulRef.insertAdjacentHTML('beforeend',result);
 
 
